@@ -1,0 +1,13 @@
+<header>
+  <!-- <button class="btn_menu menu_open" (click)="toggleMenu($event)" [ngClass]="{'menu_close' : showMenu === 'open'}"></button> -->
+  <button class="btn_menu menu_open" (click)="toggleMenu($event)" [@openCloseMenuBtn]="showMenu"></button>
+  <nav class="menu" [@openCloseMenu]="showMenu">
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="router-link-active">Home</a></li>
+      <li><a routerLink="/regions" routerLinkActive="router-link-active">Regions</a></li>
+      <li><a routerLink="/about" routerLinkActive="router-link-active">About</a></li>
+    </ul>
+  </nav>
+  <h1 class="title">Regions of the World</h1>
+</header>
+<div class="menu_overlay" [@openCloseMenuOverlay]="showOverlay"></div>
