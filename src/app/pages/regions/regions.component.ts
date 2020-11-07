@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // interfaces
-import { IRegion } from '../../interfaces/regions';
+import { ICountry } from '../../interfaces/regions';
+// services
+import { RegionService } from "../../services/region.service";
 
 @Component({
   selector: 'app-regions',
@@ -8,11 +10,18 @@ import { IRegion } from '../../interfaces/regions';
   styleUrls: ['./regions.component.scss']
 })
 export class RegionsComponent implements OnInit {
-  regions: IRegion;
+  countries: ICountry[] = [];
 
-  constructor() { }
+  errorMessage: string;
+
+  constructor(private regionService: RegionService) { }
 
   ngOnInit(): void {
+    this.regionService.getCountries().subscribe({
+      next: countries => {
+        this.countries = countries;
+      },
+      error: err => this.errorMessage = err
+    });
   }
-
 }

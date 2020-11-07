@@ -1,12 +1,44 @@
-<section class="sect_region-level">
-  <h2 class="title_region-level">[ region level ]</h2>
-  <figure *ngFor="let region of regions">
-    <img src="" alt="[ region flag ]">
-  </figure>
+<section class="region-level">
+  <header class="region-level__header">
+    <p class="region-level__header__name">Germany</p>
+    <h2 class="region-level__header__title">Countries</h2>
+  </header>
+  <div class="region-level__list">
+    <figure class="region-level__list__flag" *ngFor="let country of countries" [ngClass]="{'flag-inactive': country.name !== 'Germany'}">
+      <img src="../../../assets/images/flags/europe/{{ country.name | regionNameToUrl }}.svg" alt="[ region flag ]">
+    </figure>
+  </div>
 </section>
-<section class="sect_region-level">
-  <h2 class="title_region-level">[ region level ]</h2>
-  <figure>
-    <img src="" alt="[ region flag ]">
-  </figure>
+<section class="region-level">
+  <header class="region-level__header">
+    <p class="region-level__header__name">Hesse</p>
+    <h2 class="region-level__header__title">States</h2>
+  </header>
+  <div class="region-level__list">
+    <figure class="region-level__list__flag">
+      <img src="../../../assets/images/flags/europe/germany/hesse.svg" alt="[ region flag ]">
+    </figure>
+  </div>
+</section>
+<section class="region-level">
+  <header class="region-level__header">
+    <p class="region-level__header__name">Darmstadt-Dieburg</p>
+    <h2 class="region-level__header__title">Districts</h2>
+  </header>
+  <div class="region-level__list">
+    <figure class="region-level__list__flag">
+      <img src="../../../assets/images/flags/europe/germany/hesse/darmstadt-dieburg.svg" alt="[ region flag ]">
+    </figure>
+  </div>
+</section>
+<section class="region-level">
+  <header class="region-level__header">
+    <p class="region-level__header__name">Groß-Umstadt</p>
+    <h2 class="region-level__header__title">Towns and Municipalites</h2>
+  </header>
+  <div class="region-level__list">
+    <figure class="region-level__list__flag">
+      <img src="../../../assets/images/flags/europe/germany/hesse/darmstadt-dieburg/groß-umstadt.svg" alt="[ region flag ]">
+    </figure>
+  </div>
 </section>

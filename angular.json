@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "regions-of-the-world"
+    }
+  },
+  "defaultProject": "regions-of-the-world",
+  "cli": {
+    "analytics": false
+  }
 }

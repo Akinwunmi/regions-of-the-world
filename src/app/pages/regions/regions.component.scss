@@ -1,7 +1,72 @@
-.sect_region-level {
-  display: flex;
+@import '../../../styles.scss';
 
-  .title_region-level {
-    float: right;
+.region-level {
+  margin-top: 10px;
+
+  &__header {
+    box-sizing: border-box;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 110px);
+    height: 45px;
+    margin: 0 110px 0 0;
+
+    &::before {
+      z-index: 1;
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+
+      background-color: $default-white;
+    }
+
+    > * {
+      z-index: 2;
+      align-self: center;
+      padding: 0 10px;
+
+      background-color: $default-grey;
+
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+    &__name {
+      margin-left: 20px;
+
+      color: $secondary-color;
+    }
+    &__title {
+      margin-right: 70px;
+
+      color: $default-white;
+    }
+  }
+  &__list {
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+
+    &__flag {
+      display: inline-flex;
+      width: 120px;
+      height: 80px;
+      margin: 0;
+      margin-right: 10px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+      }
+    }
+    .flag-inactive {
+      opacity: .1;
+    }
   }
 }
